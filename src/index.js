@@ -106,11 +106,9 @@ const fi = (function() {
                   finalArray.push(array[i])
                 }
               }} else {
-                let callbackVals = [];
                 for (let i = 0; i < array.length; i++) {
-                  if (!callbackVals.includes(callback(array[i]))) {
-                    callbackVals.push(callback(array[i]))
-                    finalArray.push(array[i])
+                  if (!finalArray.includes(callback(array[i]))) {
+                    finalArray.push(callback(array[i]))
                   }
                 }
               }
